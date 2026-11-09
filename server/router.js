@@ -6,6 +6,8 @@ const router = (app) => {
 
   app.post('/addSong', controllers.Song.addSong);
 
+  app.post('/deleteSong', controllers.Song.deleteSong);
+
   app.get('/', controllers.Song.appPage);
 };
 

@@ -38,7 +38,8 @@ const addSong = async (req, res) => {
 
 const deleteSong = async (req, res) => {
   try {
-    return res.status(501).json({ error: 'Not built yet' });
+    await Song.deleteOne({_id: request.body.id}).exec();
+    return res.status(200).json({message: 'Song deleted.'});
   } catch (err) {
     console.log(err);
     return res.status(500).json({ error: 'Error deleting song!' });
